@@ -50,6 +50,7 @@ jobs:
               run: npx semantic-release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
             - name: Deploy to Staging
               if: github.event_name == 'push'
               run: npx surge --project ./build --domain scrawny-screw.surge.sh
